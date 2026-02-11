@@ -1,8 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import PublicLayout from '../layouts/PublicLayout.vue'
+import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [],
+  routes: [
+    {
+      path: '/',
+      component: PublicLayout,
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: HomeView,
+        },
+      ]
+    }
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router
