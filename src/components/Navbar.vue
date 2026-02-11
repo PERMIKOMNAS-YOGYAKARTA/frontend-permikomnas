@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 
-const isMenuOpen = ref(false) // State untuk menu mobile
-const isProfileOpen = ref(false) // State untuk dropdown profil di mobile
+const isMenuOpen = ref(false) 
+const isProfileOpen = ref(false)
 
 const profilMenus = [
   { name: 'Sejarah Permikomnas', path: '/sejarah' },
