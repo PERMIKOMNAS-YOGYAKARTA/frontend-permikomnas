@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "message": "Partner berhasil diambil",
+  "data": [
+    {
+      "id": 1,
+      "name": "Granola",
+      "logoUrl": "https://www.logo.dev/customer-logos/granola.svg"
+    },
+    {
+      "id": 2,
+      "name": "Levels.fyi",
+      "logoUrl": "https://www.logo.dev/customer-logos/levelsfyi.svg"
+    },
+    {
+      "id": 3,
+      "name": "Okta",
+      "logoUrl": "https://www.logo.dev/customer-logos/okta.svg"
+    },
+    {
+      "id": 4,
+      "name": "Perplexity AI",
+      "logoUrl": "https://www.logo.dev/customer-logos/perplexity.svg"
+    },
+    {
+      "id": 5,
+      "name": "Mutiny",
+      "logoUrl": "https://www.logo.dev/customer-logos/mutiny.svg"
+    }
+  ]
+}

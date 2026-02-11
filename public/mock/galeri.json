@@ -1,0 +1,26 @@
+{
+    "success": true,
+    "message": "Galeri fetched successfully",
+    "data": [
+        {
+      "id": 1,
+      "alt": "Foto All BPW Permikomnas",
+      "url": "https://picsum.photos/id/1/1920/1080"
+    },
+    {
+      "id": 2,
+      "alt": "Foto PH Permikomnas",
+      "url": "https://picsum.photos/id/0/1920/1080"
+    },
+    {
+      "id": 3,
+      "alt": "Foto Kegiatan Permikomnas",
+      "url": "https://picsum.photos/id/20/1920/1080"
+    },
+    {
+      "id": 4,
+      "alt": "Foto Seminar Permikomnas",
+      "url": "https://picsum.photos/id/180/1920/1080"
+    }
+    ]
+}

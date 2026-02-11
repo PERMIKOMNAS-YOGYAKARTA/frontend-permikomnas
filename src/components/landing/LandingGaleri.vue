@@ -18,7 +18,9 @@
             class="w-full h-full object-cover"
           />
           <!-- Dark Overlay untuk kontras text -->
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70"
+          ></div>
         </div>
       </transition-group>
     </div>
@@ -117,7 +119,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
+import { useLandingStore } from "@/stores/landingStore";
+
+const landingStore = useLandingStore();
 
 // Props (optional - untuk customization)
 const props = defineProps({
@@ -136,24 +141,7 @@ const currentIndex = ref(0);
 let autoPlayTimer = null;
 
 // Images data - Ganti dengan foto asli Permikomnas
-const images = ref([
-  {
-    url: "https://picsum.photos/id/1/1920/1080", // Foto Laptop & Coding
-    alt: "Permikomnas Tech Event",
-  },
-  {
-    url: "https://picsum.photos/id/0/1920/1080", // Foto Laptop & Kerja
-    alt: "Mahasiswa Informatika",
-  },
-  {
-    url: "https://picsum.photos/id/20/1920/1080", // Foto Desktop Setup
-    alt: "Community Meeting",
-  },
-  {
-    url: "https://picsum.photos/id/180/1920/1080", // Foto Laptop & Kopi (Study vibe)
-    alt: "Workshop Permikomnas",
-  },
-]);
+const images = computed(() => landingStore.galeri)
 
 // Methods
 const nextSlide = () => {
@@ -254,8 +242,12 @@ const handleMouseLeave = () => {
 
 /* Animasi memudar standar */
 @keyframes simple-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* 3. Utility Classes untuk Animasi Teks */

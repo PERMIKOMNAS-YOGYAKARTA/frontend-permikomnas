@@ -7,20 +7,39 @@ const apiClient = axios.create({
     },
 })
 
+const useMock = import.meta.env.VITE_USE_MOCKS === 'true';
+const sleep = (ms = 1500) => new Promise(resolve => setTimeout(resolve, ms));
+
 export default {
-    getGaleri() {
-        return apiClient.get('/galeri');
+    async getGaleri() {
+        if (useMock) {
+            await sleep();
+            return await apiClient.get('/mock/galeri.json');
+        }
+        return await apiClient.get('/galeri');
     },
 
-    getGreeting(){
+    async getGreeting(){
+        if (useMock) {
+            await sleep();
+            return await apiClient.get('/mock/greeting.json');
+        }
         return apiClient.get('/greeting');
     },
 
-    getPartners() {
+    async getPartners() {
+        if (useMock) {
+            await sleep();
+            return await apiClient.get('/mock/partners.json');
+        }
         return apiClient.get('/partners');
     },
 
-    getMember() {
+    async getMember() {
+        if (useMock) {
+            await sleep();
+            return await apiClient.get('/mock/members.json');
+        }
         return apiClient.get('/member');
     }
 }
